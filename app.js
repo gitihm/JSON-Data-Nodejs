@@ -1,8 +1,4 @@
 var fs = require('fs');
-var data='airx test writer in nodejs';
-var writerStream = fs.createWriteStream('output.txt');
-writerStream.write(data,'utf8');
-writerStream.end();
-writerStream.on('finish',()=>{
-    console.log("end");
-});
+var reader = fs.createReadStream('code.txt');
+var writer = fs.createWriteStream('file1.txt');
+reader.pipe(writer);
