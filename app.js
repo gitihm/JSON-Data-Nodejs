@@ -1,4 +1,6 @@
-var fs = require('fs');
-var reader = fs.createReadStream('code.txt');
-var writer = fs.createWriteStream('file1.txt');
-reader.pipe(writer);
+var http = require('http');
+http.createServer((req,res)=>{
+    res.writeHead(200,({'Content-Type':'text/plain'}));
+    res.end("hello world");
+
+}).listen(8081,'127.0.0.1');
